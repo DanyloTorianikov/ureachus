@@ -1,0 +1,45 @@
+<div class="mes-models">
+  <div class="title">
+    <div class="title-block">
+      <div class="retour">
+        <img class="arr-down" src="assets/images/Iconly/Light-outline/Arrow - Down 2.svg">
+        <p>Retour</p>
+      </div>
+      <img src="assets/images/vuesax/linear/task-square.svg">
+      <span class="title-name">Mes modèles</span>
+    </div>
+
+    <div class="add-ajouter">
+      <img src="assets/images/add.svg" class="img-add">
+      <span>Ajouter un modèle</span>
+    </div>
+  </div>
+  <div class="pre-evaluation">
+    <div class="pre-evaluation-title">
+      <img class="note-img" src="assets/images/vuesax/linear/note-2.svg">
+      <span>Pré-Évaluation</span>
+    </div>
+
+    <div class="flex">
+      <div class="models">
+        <input [(ngModel)]="filterVal" (change)="filter()" class="search" placeholder="Recherche des modeles…">
+        <img class="search-img" src="assets/images/Search.svg">
+        <div class="users-models">
+          <app-users-model
+            *ngFor="let model of viewedModels"
+            [model]="model"
+            (pdfSrc)="takeSrc($event)"
+          ></app-users-model>
+        </div>
+      </div>
+      <ngx-extended-pdf-viewer
+        style="flex: 50%; margin-top: 20px"
+        [src]="currentPdfSrc"
+        [useBrowserLocale]="true"
+        height="100%"
+        [textLayer]="true"
+        [showHandToolButton]="true">
+      ></ngx-extended-pdf-viewer>
+    </div>
+  </div>
+</div>

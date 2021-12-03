@@ -1,0 +1,10 @@
+<div class="navbar">
+  <div *ngFor="let navButton of navButtons"
+       class="nav-button justify-center"
+       (click)="activateCategory($event)">
+    <img [src]="navButton.imgUrl">
+    <span>{{navButton.title}}</span>
+  </div>
+</div>
+
+

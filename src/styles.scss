@@ -1,0 +1,15 @@
+@import './assets/variables.scss';
+
+body,
+html {
+  margin: 0;
+  font-style: var(--primary-font);
+  overflow: hidden!important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: var(--primary-font), "Poppins", sans-serif; }

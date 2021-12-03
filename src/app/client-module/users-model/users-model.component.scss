@@ -1,0 +1,118 @@
+.users-model {
+  border: 1px solid #F1F8F6;
+  background-color: #F1F8F6;
+  border-radius: 8px;
+  display: flex;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+
+  .model-info {
+    position: relative;
+    margin-left: 29px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+
+    .checkbox {
+      left: -15px;
+      position: absolute;
+      display: block;
+      padding: 8.5px;
+      border: 2px solid var(--prmary-color);
+      border-radius: 3px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        background-color: var(--prmary-color);
+
+        &::before {
+          position: absolute;
+          content: '';
+          padding-right: 1.3px;
+          padding-top: 10.5px;
+          background-color: white;
+          border-radius: 3px;
+          transform: translateY(-6px) translateX(0.5px) rotate(45deg);
+        }
+
+        &::after {
+          position: absolute;
+          content: '';
+          padding-right: 1.3px;
+          padding-top: 6px;
+          background-color: white;
+          border-radius: 3px;
+          transform: translateY(-2.1px) translateX(-5px) rotate(135deg);
+        }
+      }
+    }
+
+    .model-id {
+      margin: 0 20%;
+    }
+
+    .model-name {
+      white-space: nowrap;
+    }
+
+    .model-date {
+      font-size: 10px;
+      color: #C7C7C7;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 18px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.available-toggle:hover {
+          cursor: pointer !important;
+      }
+    }
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.not-available {
+  background-color: #F5F5F5;
+  color: #A3A6AF;
+
+  .model-info {
+    .checkbox {
+      border-color: #A3A6AF;
+
+      &.active {
+        background: #A3A6AF;
+      }
+
+      &:hover {
+        cursor: auto !important;
+      }
+    }
+  }
+  img:hover {
+    cursor: auto !important;
+  }
+}
+
+.not-checked {
+  border: 1px solid #F1F8F6;
+  background-color: white;
+  // box-sizing: border-box;
+}
